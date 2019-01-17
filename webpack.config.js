@@ -22,7 +22,7 @@ const commonConfig = merge([
 const productionConfig = merge([
   parts.extractCSS({
     // exclude: /node_modules/,
-    use: ["css-loader", "sass-loader"]
+    use: ["css-loader", "sass-loader", parts.autoprefix()]
   }),
   parts.purifyCSS({
     paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
